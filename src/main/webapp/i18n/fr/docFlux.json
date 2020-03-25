@@ -1,0 +1,27 @@
+{
+  "pnApplicationApp": {
+    "docFlux": {
+      "home": {
+        "title": "DocFluxes",
+        "createLabel": "Créer un nouveau Doc Flux",
+        "createOrEditLabel": "Créer ou éditer un Doc Flux",
+        "notFound": "Aucun Doc Flux trouvé"
+      },
+      "created": "Un nouveau Doc Flux a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Doc Flux avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Doc Flux avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Doc Flux {{ id }} ?"
+      },
+      "detail": {
+        "title": "Doc Flux"
+      },
+      "idEdition": "Id Edition",
+      "libelle": "Libelle",
+      "modele": "Modele",
+      "famille": "Famille",
+      "version": "Version",
+      "idEdition": "Id Edition"
+    }
+  }
+}

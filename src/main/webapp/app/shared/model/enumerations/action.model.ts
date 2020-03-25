@@ -1,0 +1,6 @@
+export const enum Action {
+  FINALISER = 'FINALISER',
+  EDITER = 'EDITER',
+  BROUILLON = 'BROUILLON',
+  SUPPRESSION = 'SUPPRESSION'
+}

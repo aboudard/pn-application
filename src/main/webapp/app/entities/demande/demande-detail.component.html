@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demande">
+            <h2><span jhiTranslate="pnApplicationApp.demande.detail.title">Demande</span> {{ demande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.demande.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ demande.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.domaine">Domaine</span></dt>
+                <dd>
+                    <span>{{ demande.domaine }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.idDemande">Id Demande</span></dt>
+                <dd>
+                    <span>{{ demande.idDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.badge">Badge</span></dt>
+                <dd>
+                    <span>{{ demande.badge }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.dateDemande">Date Demande</span></dt>
+                <dd>
+                    <span>{{ demande.dateDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.statut">Statut</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'pnApplicationApp.Statut.' + demande.statut }}">{{ demande.statut }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.demande.flux">Flux</span></dt>
+                <dd>
+                    <div *ngIf="demande.flux">
+                        <a (click)="openFile(demande?.fluxContentType!, demande?.flux)" jhiTranslate="entity.action.open">open</a>
+                        {{ demande.fluxContentType }}, {{ byteSize(demande.flux) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande', demande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

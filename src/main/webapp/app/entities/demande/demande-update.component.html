@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-demande-heading" jhiTranslate="pnApplicationApp.demande.home.createOrEditLabel">Create or edit a Demande</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.idTech" for="field_idTech">Id Tech</label>
+                    <input type="number" class="form-control" name="idTech" id="field_idTech"
+                           formControlName="idTech"/>
+                    <div *ngIf="editForm.get('idTech')!.invalid && (editForm.get('idTech')!.dirty || editForm.get('idTech')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('idTech')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('idTech')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.domaine" for="field_domaine">Domaine</label>
+                    <input type="text" class="form-control" name="domaine" id="field_domaine"
+                           formControlName="domaine"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.idDemande" for="field_idDemande">Id Demande</label>
+                    <input type="text" class="form-control" name="idDemande" id="field_idDemande"
+                           formControlName="idDemande"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.badge" for="field_badge">Badge</label>
+                    <input type="text" class="form-control" name="badge" id="field_badge"
+                           formControlName="badge"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.dateDemande" for="field_dateDemande">Date Demande</label>
+                    <div class="d-flex">
+                        <input id="field_dateDemande" type="datetime-local" class="form-control" name="dateDemande" formControlName="dateDemande" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.statut" for="field_statut">Statut</label>
+                    <select class="form-control" name="statut" formControlName="statut" id="field_statut">
+                        <option value="A_FINALISER">{{ 'pnApplicationApp.Statut.A_FINALISER' | translate }}</option>
+                        <option value="BROUILLON">{{ 'pnApplicationApp.Statut.BROUILLON' | translate }}</option>
+                        <option value="VALIDE">{{ 'pnApplicationApp.Statut.VALIDE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.demande.flux" for="field_flux">Flux</label>
+                    <div>
+                        <div *ngIf="editForm.get('flux')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fluxContentType')!.value, editForm.get('flux')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fluxContentType')!.value }}, {{ byteSize(editForm.get('flux')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({flux: null});editForm.patchValue({fluxContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_flux" (change)="setFileData($event, 'flux', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="flux" id="field_flux"
+                           formControlName="flux"/>
+                    <input type="hidden" class="form-control" name="fluxContentType" id="field_fluxContentType"
+                           formControlName="fluxContentType" />
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

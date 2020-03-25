@@ -1,0 +1,46 @@
+{
+    "name": "DocFlux",
+    "fields": [
+        {
+            "fieldName": "idEdition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "famille",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "idDemande",
+            "relationshipName": "idEdition",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200325143400",
+    "entityTableName": "doc_flux",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

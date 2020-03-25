@@ -1,0 +1,34 @@
+{
+    "name": "Audit",
+    "fields": [
+        {
+            "fieldName": "idEdition",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "badge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "action",
+            "fieldType": "Action",
+            "fieldValues": "FINALISER,EDITER,BROUILLON,SUPPRESSION"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200325143500",
+    "entityTableName": "audit",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,11 @@
+{
+  "pnApplicationApp": {
+    "Action": {
+      "null": "",
+      "FINALISER": "FINALISER",
+      "EDITER": "EDITER",
+      "BROUILLON": "BROUILLON",
+      "SUPPRESSION": "SUPPRESSION"
+    }
+  }
+}

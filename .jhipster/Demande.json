@@ -1,0 +1,60 @@
+{
+    "name": "Demande",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "domaine",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idDemande",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "badge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDemande",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "statut",
+            "fieldType": "Statut",
+            "fieldValues": "A_FINALISER,BROUILLON,VALIDE"
+        },
+        {
+            "fieldName": "flux",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "docFlux",
+            "otherEntityRelationshipName": "idEdition",
+            "relationshipName": "idDemande",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200325143200",
+    "javadoc": "Entity Flux",
+    "entityTableName": "demande",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
