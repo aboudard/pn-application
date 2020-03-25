@@ -1,0 +1,65 @@
+/**
+* Entity Flux
+*/
+entity Demande {
+	idTech Long required,
+    domaine String,
+    idDemande String,
+    badge String,
+    dateDemande Instant,
+    statut Statut,
+    flux Blob
+}
+
+entity MetaProduction {
+	idTech Long,
+	societe String,
+    numContratLgbt String,
+    numSous String
+}
+
+relationship OneToOne {
+	MetaProduction{idTech} to Demande
+}
+
+entity DocFlux {
+	idEdition String,
+	libelle String,
+    modele String,
+    famille String,
+    version String
+}
+
+relationship ManyToMany {
+	DocFlux{idEdition} to Demande{idDemande}
+}
+
+entity Audit {
+	id Long,
+    idEdition Long,
+    date Instant,
+    badge String,
+    action Action
+}
+
+enum Action {
+	FINALISER, EDITER, BROUILLON, SUPPRESSION
+}
+
+enum Statut {
+	A_FINALISER, BROUILLON, VALIDE
+}
+
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
