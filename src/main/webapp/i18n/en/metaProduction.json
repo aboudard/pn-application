@@ -1,0 +1,26 @@
+{
+  "pnApplicationApp": {
+    "metaProduction": {
+      "home": {
+        "title": "Meta Productions",
+        "createLabel": "Create a new Meta Production",
+        "createOrEditLabel": "Create or edit a Meta Production",
+        "notFound": "No Meta Productions found"
+      },
+      "created": "A new Meta Production is created with identifier {{ param }}",
+      "updated": "A Meta Production is updated with identifier {{ param }}",
+      "deleted": "A Meta Production is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meta Production {{ id }}?"
+      },
+      "detail": {
+        "title": "Meta Production"
+      },
+      "idTech": "Id Tech",
+      "societe": "Societe",
+      "numContratLgbt": "Num Contrat Lgbt",
+      "numSous": "Num Sous",
+      "idTech": "Id Tech"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "pnApplicationApp": {
+    "Statut": {
+      "null": "",
+      "A_FINALISER": "A_FINALISER",
+      "BROUILLON": "BROUILLON",
+      "VALIDE": "VALIDE"
+    }
+  }
+}

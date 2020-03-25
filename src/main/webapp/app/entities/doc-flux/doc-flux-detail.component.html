@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="docFlux">
+            <h2><span jhiTranslate="pnApplicationApp.docFlux.detail.title">Doc Flux</span> {{ docFlux.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.idEdition">Id Edition</span></dt>
+                <dd>
+                    <span>{{ docFlux.idEdition }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.libelle">Libelle</span></dt>
+                <dd>
+                    <span>{{ docFlux.libelle }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.modele">Modele</span></dt>
+                <dd>
+                    <span>{{ docFlux.modele }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.famille">Famille</span></dt>
+                <dd>
+                    <span>{{ docFlux.famille }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.version">Version</span></dt>
+                <dd>
+                    <span>{{ docFlux.version }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.docFlux.idEdition">Id Edition</span></dt>
+                <dd>
+                    <span *ngFor="let idEdition of docFlux.idEditions; let last = last">
+                        <a [routerLink]="['/demande', idEdition?.id, 'view']">{{ idEdition.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doc-flux', docFlux.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

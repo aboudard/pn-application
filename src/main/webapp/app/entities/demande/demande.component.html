@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pnApplicationApp.demande.home.title">Demandes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-demande" [routerLink]="['/demande/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pnApplicationApp.demande.home.createLabel">
+            Create a new Demande
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="demandes?.length === 0">
+        <span jhiTranslate="pnApplicationApp.demande.home.notFound">No demandes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="demandes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.idTech">Id Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.domaine">Domaine</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.idDemande">Id Demande</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.badge">Badge</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.dateDemande">Date Demande</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.statut">Statut</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.demande.flux">Flux</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let demande of demandes ;trackBy: trackId">
+                    <td><a [routerLink]="['/demande', demande.id, 'view']">{{ demande.id }}</a></td>
+                    <td>{{ demande.idTech }}</td>
+                    <td>{{ demande.domaine }}</td>
+                    <td>{{ demande.idDemande }}</td>
+                    <td>{{ demande.badge }}</td>
+                    <td>{{ demande.dateDemande | date:'medium' }}</td>
+                    <td jhiTranslate="{{ 'pnApplicationApp.Statut.' + demande.statut }}">{{ demande.statut }}</td>
+                    <td>
+                        <a *ngIf="demande.flux" (click)="openFile(demande.fluxContentType, demande.flux)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="demande.flux">{{ demande.fluxContentType }}, {{ byteSize(demande.flux) }}</span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/demande', demande.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/demande', demande.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(demande)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
