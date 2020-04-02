@@ -18,10 +18,64 @@ entity MetaProduction {
     numSous String
 }
 
+entity MetaRecouvrement {
+	idTech Long,
+	societe String,
+    numSous String
+}
+entity MetaVie {
+	idTech Long,
+    numSous String
+    numContratVie String
+}
+entity MetaSelMed {
+	idTech Long,
+    numSous String
+    numDossier String
+    nomAssure String
+}
+entity MetaSIRH {
+	idTech Long,
+    numBadge String
+    numBadgeDest String
+    nomCollab String
+    prenomCollab String
+    codeUO String
+}
+entity MetaCoheris {
+	idTech Long,
+	societe String,
+    numSous String
+    numGRC String
+}
+entity MetaReglement {
+	idTech Long,
+	societe String,
+    numSinistre String,
+    numContratLgbt String,
+    numSous String
+}
 relationship OneToOne {
 	MetaProduction{idTech} to Demande
 }
-
+relationship OneToOne {
+    MetaRecouvrement{idTech} to Demande
+}
+relationship OneToOne {
+    MetaReglement{idTech} to Demande
+}
+relationship OneToOne {
+    MetaCoheris{idTech} to Demande
+}
+relationship OneToOne {
+    MetaVie{idTech} to Demande
+}
+relationship OneToOne {
+    MetaSelMed{idTech} to Demande
+}
+relationship OneToOne {
+    MetaSIRH{idTech} to Demande
+}
 entity DocFlux {
 	idEdition String,
 	libelle String,
@@ -29,26 +83,53 @@ entity DocFlux {
     famille String,
     version String
 }
-
 relationship ManyToMany {
 	DocFlux{idEdition} to Demande{idDemande}
 }
-
 entity Audit {
-	id Long,
+	idAudit Long,
     idEdition Long,
     date Instant,
     badge String,
     action Action
 }
-
 enum Action {
-	FINALISER, EDITER, BROUILLON, SUPPRESSION
+	VISUALISATION, EDITION, BROUILLON, SUPPRESSION
+}
+enum Statut {
+	A_FINALISER, BROUILLON, TERMINE
+}
+entity ParamDemande {
+	idDemande String,
+    fgcle Long,
+    nomDataLoader Long,
+    versionDataLoader String,
+    nomModele Long,
+    idModele Long,
+    versionModele String,
+    impression String,
+    archivage String,
+    interactive String,
+    stockage String,
+    hostCol String,
+    impCentr String,
+    instCol String,
+    impHCentr String,
+    lotCont String,
+    dest String,
+    triRegrouptBann String,
+    regles Long,
+    conditionnement String,
+    periodicite String,
+    flagMail String,
+    description String,
+    versionMo Long,
+    queuesEaiIn String,
+    queuesEaiOut String,
+    libre2 Long,
+    libre4 Long
 }
 
-enum Statut {
-	A_FINALISER, BROUILLON, VALIDE
-}
 
 
 // Set pagination options
