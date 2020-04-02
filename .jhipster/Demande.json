@@ -37,6 +37,13 @@
     ],
     "relationships": [
         {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "metaProduction",
+            "otherEntityRelationshipName": "idTech",
+            "relationshipName": "idTech",
+            "ownerSide": false
+        },
+        {
             "relationshipType": "many-to-many",
             "otherEntityName": "docFlux",
             "otherEntityRelationshipName": "idEdition",

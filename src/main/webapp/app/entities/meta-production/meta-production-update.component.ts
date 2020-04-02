@@ -40,7 +40,7 @@ export class MetaProductionUpdateComponent implements OnInit {
       this.updateForm(metaProduction);
 
       this.demandeService
-        .query({ filter: 'metaproduction-is-null' })
+        .query({ filter: 'idtech-is-null' })
         .pipe(
           map((res: HttpResponse<IDemande[]>) => {
             return res.body || [];

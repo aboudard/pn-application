@@ -22,7 +22,7 @@
         {
             "relationshipType": "one-to-one",
             "otherEntityName": "demande",
-            "otherEntityRelationshipName": "metaProduction",
+            "otherEntityRelationshipName": "idTech",
             "relationshipName": "idTech",
             "otherEntityField": "id",
             "ownerSide": true

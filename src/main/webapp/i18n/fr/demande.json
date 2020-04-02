@@ -23,6 +23,7 @@
       "dateDemande": "Date Demande",
       "statut": "Statut",
       "flux": "Flux",
+      "idTech": "Id Tech",
       "idDemande": "Id Demande"
     }
   }

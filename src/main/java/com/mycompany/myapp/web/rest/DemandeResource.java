@@ -18,6 +18,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * REST controller for managing {@link com.mycompany.myapp.domain.Demande}.
@@ -83,10 +85,18 @@ public class DemandeResource {
     /**
      * {@code GET  /demandes} : get all the demandes.
      *
+     * @param filter the filter of the request.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of demandes in body.
      */
     @GetMapping("/demandes")
-    public List<Demande> getAllDemandes() {
+    public List<Demande> getAllDemandes(@RequestParam(required = false) String filter) {
+        if ("idtech-is-null".equals(filter)) {
+            log.debug("REST request to get all Demandes where idTech is null");
+            return StreamSupport
+                .stream(demandeRepository.findAll().spliterator(), false)
+                .filter(demande -> demande.getIdTech() == null)
+                .collect(Collectors.toList());
+        }
         log.debug("REST request to get all Demandes");
         return demandeRepository.findAll();
     }

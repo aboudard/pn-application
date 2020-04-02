@@ -58,6 +58,10 @@ public class Demande implements Serializable {
     @Column(name = "flux_content_type")
     private String fluxContentType;
 
+    @OneToOne(mappedBy = "idTech")
+    @JsonIgnore
+    private MetaProduction idTech;
+
     @ManyToMany(mappedBy = "idEditions")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JsonIgnore
@@ -174,6 +178,19 @@ public class Demande implements Serializable {
 
     public void setFluxContentType(String fluxContentType) {
         this.fluxContentType = fluxContentType;
+    }
+
+    public MetaProduction getIdTech() {
+        return idTech;
+    }
+
+    public Demande idTech(MetaProduction metaProduction) {
+        this.idTech = metaProduction;
+        return this;
+    }
+
+    public void setIdTech(MetaProduction metaProduction) {
+        this.idTech = metaProduction;
     }
 
     public Set<DocFlux> getIdDemandes() {

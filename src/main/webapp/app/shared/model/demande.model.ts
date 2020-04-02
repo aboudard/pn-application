@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { IMetaProduction } from 'app/shared/model/meta-production.model';
 import { IDocFlux } from 'app/shared/model/doc-flux.model';
 import { Statut } from 'app/shared/model/enumerations/statut.model';
 
@@ -12,6 +13,7 @@ export interface IDemande {
   statut?: Statut;
   fluxContentType?: string;
   flux?: any;
+  idTech?: IMetaProduction;
   idDemandes?: IDocFlux[];
 }
 
@@ -26,6 +28,7 @@ export class Demande implements IDemande {
     public statut?: Statut,
     public fluxContentType?: string,
     public flux?: any,
+    public idTech?: IMetaProduction,
     public idDemandes?: IDocFlux[]
   ) {}
 }
