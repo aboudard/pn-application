@@ -18,8 +18,21 @@
     <include file="config/liquibase/changelog/20200325143300_added_entity_MetaProduction.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200325143400_added_entity_DocFlux.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200325143500_added_entity_Audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133700_added_entity_MetaRecouvrement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133800_added_entity_MetaVie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133900_added_entity_MetaSelMed.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134000_added_entity_MetaSIRH.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134100_added_entity_MetaCoheris.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134200_added_entity_MetaReglement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134500_added_entity_ParamDemande.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20200325143300_added_entity_constraints_MetaProduction.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200325143400_added_entity_constraints_DocFlux.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133700_added_entity_constraints_MetaRecouvrement.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133800_added_entity_constraints_MetaVie.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402133900_added_entity_constraints_MetaSelMed.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134000_added_entity_constraints_MetaSIRH.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134100_added_entity_constraints_MetaCoheris.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200402134200_added_entity_constraints_MetaReglement.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

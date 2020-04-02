@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-meta-sirh-heading" jhiTranslate="pnApplicationApp.metaSIRH.home.createOrEditLabel">Create or edit a Meta SIRH</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.idTech" for="field_idTech">Id Tech</label>
+                    <input type="number" class="form-control" name="idTech" id="field_idTech"
+                           formControlName="idTech"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.numBadge" for="field_numBadge">Num Badge</label>
+                    <input type="text" class="form-control" name="numBadge" id="field_numBadge"
+                           formControlName="numBadge"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.numBadgeDest" for="field_numBadgeDest">Num Badge Dest</label>
+                    <input type="text" class="form-control" name="numBadgeDest" id="field_numBadgeDest"
+                           formControlName="numBadgeDest"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.nomCollab" for="field_nomCollab">Nom Collab</label>
+                    <input type="text" class="form-control" name="nomCollab" id="field_nomCollab"
+                           formControlName="nomCollab"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.prenomCollab" for="field_prenomCollab">Prenom Collab</label>
+                    <input type="text" class="form-control" name="prenomCollab" id="field_prenomCollab"
+                           formControlName="prenomCollab"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.codeUO" for="field_codeUO">Code UO</label>
+                    <input type="text" class="form-control" name="codeUO" id="field_codeUO"
+                           formControlName="codeUO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.metaSIRH.idTech" for="field_idTech">Id Tech</label>
+                    <select class="form-control" id="field_idTech" name="idTech" formControlName="idTech">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="demandeOption.id === editForm.get('idTech')!.value?.id ? editForm.get('idTech')!.value : demandeOption" *ngFor="let demandeOption of idteches; trackBy: trackById">{{ demandeOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

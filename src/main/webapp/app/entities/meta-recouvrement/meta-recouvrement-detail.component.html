@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="metaRecouvrement">
+            <h2><span jhiTranslate="pnApplicationApp.metaRecouvrement.detail.title">Meta Recouvrement</span> {{ metaRecouvrement.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.metaRecouvrement.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ metaRecouvrement.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaRecouvrement.societe">Societe</span></dt>
+                <dd>
+                    <span>{{ metaRecouvrement.societe }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaRecouvrement.numSous">Num Sous</span></dt>
+                <dd>
+                    <span>{{ metaRecouvrement.numSous }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaRecouvrement.idTech">Id Tech</span></dt>
+                <dd>
+                    <div *ngIf="metaRecouvrement.idTech">
+                        <a [routerLink]="['/demande', metaRecouvrement.idTech?.id, 'view']">{{ metaRecouvrement.idTech?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meta-recouvrement', metaRecouvrement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

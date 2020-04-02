@@ -41,12 +41,14 @@ describe('Audit e2e test', () => {
     await auditComponentsPage.clickOnCreateButton();
 
     await promise.all([
+      auditUpdatePage.setIdAuditInput('5'),
       auditUpdatePage.setIdEditionInput('5'),
       auditUpdatePage.setDateInput('01/01/2001' + protractor.Key.TAB + '02:30AM'),
       auditUpdatePage.setBadgeInput('badge'),
       auditUpdatePage.actionSelectLastOption()
     ]);
 
+    expect(await auditUpdatePage.getIdAuditInput()).to.eq('5', 'Expected idAudit value to be equals to 5');
     expect(await auditUpdatePage.getIdEditionInput()).to.eq('5', 'Expected idEdition value to be equals to 5');
     expect(await auditUpdatePage.getDateInput()).to.contain('2001-01-01T02:30', 'Expected date value to be equals to 2000-12-31');
     expect(await auditUpdatePage.getBadgeInput()).to.eq('badge', 'Expected Badge value to be equals to badge');

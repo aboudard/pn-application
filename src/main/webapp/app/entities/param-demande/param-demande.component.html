@@ -1,0 +1,115 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pnApplicationApp.paramDemande.home.title">Param Demandes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-param-demande" [routerLink]="['/param-demande/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pnApplicationApp.paramDemande.home.createLabel">
+            Create a new Param Demande
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="paramDemandes?.length === 0">
+        <span jhiTranslate="pnApplicationApp.paramDemande.home.notFound">No paramDemandes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="paramDemandes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.idDemande">Id Demande</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.fgcle">Fgcle</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.nomDataLoader">Nom Data Loader</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.versionDataLoader">Version Data Loader</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.nomModele">Nom Modele</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.idModele">Id Modele</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.versionModele">Version Modele</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.impression">Impression</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.archivage">Archivage</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.interactive">Interactive</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.stockage">Stockage</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.hostCol">Host Col</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.impCentr">Imp Centr</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.instCol">Inst Col</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.impHCentr">Imp H Centr</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.lotCont">Lot Cont</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.dest">Dest</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.triRegrouptBann">Tri Regroupt Bann</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.regles">Regles</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.conditionnement">Conditionnement</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.periodicite">Periodicite</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.flagMail">Flag Mail</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.versionMo">Version Mo</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.queuesEaiIn">Queues Eai In</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.queuesEaiOut">Queues Eai Out</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.libre2">Libre 2</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.paramDemande.libre4">Libre 4</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paramDemande of paramDemandes ;trackBy: trackId">
+                    <td><a [routerLink]="['/param-demande', paramDemande.id, 'view']">{{ paramDemande.id }}</a></td>
+                    <td>{{ paramDemande.idDemande }}</td>
+                    <td>{{ paramDemande.fgcle }}</td>
+                    <td>{{ paramDemande.nomDataLoader }}</td>
+                    <td>{{ paramDemande.versionDataLoader }}</td>
+                    <td>{{ paramDemande.nomModele }}</td>
+                    <td>{{ paramDemande.idModele }}</td>
+                    <td>{{ paramDemande.versionModele }}</td>
+                    <td>{{ paramDemande.impression }}</td>
+                    <td>{{ paramDemande.archivage }}</td>
+                    <td>{{ paramDemande.interactive }}</td>
+                    <td>{{ paramDemande.stockage }}</td>
+                    <td>{{ paramDemande.hostCol }}</td>
+                    <td>{{ paramDemande.impCentr }}</td>
+                    <td>{{ paramDemande.instCol }}</td>
+                    <td>{{ paramDemande.impHCentr }}</td>
+                    <td>{{ paramDemande.lotCont }}</td>
+                    <td>{{ paramDemande.dest }}</td>
+                    <td>{{ paramDemande.triRegrouptBann }}</td>
+                    <td>{{ paramDemande.regles }}</td>
+                    <td>{{ paramDemande.conditionnement }}</td>
+                    <td>{{ paramDemande.periodicite }}</td>
+                    <td>{{ paramDemande.flagMail }}</td>
+                    <td>{{ paramDemande.description }}</td>
+                    <td>{{ paramDemande.versionMo }}</td>
+                    <td>{{ paramDemande.queuesEaiIn }}</td>
+                    <td>{{ paramDemande.queuesEaiOut }}</td>
+                    <td>{{ paramDemande.libre2 }}</td>
+                    <td>{{ paramDemande.libre4 }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/param-demande', paramDemande.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/param-demande', paramDemande.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(paramDemande)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

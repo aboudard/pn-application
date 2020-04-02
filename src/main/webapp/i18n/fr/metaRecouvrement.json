@@ -1,0 +1,25 @@
+{
+  "pnApplicationApp": {
+    "metaRecouvrement": {
+      "home": {
+        "title": "MetaRecouvrements",
+        "createLabel": "Créer un nouveau Meta Recouvrement",
+        "createOrEditLabel": "Créer ou éditer un Meta Recouvrement",
+        "notFound": "Aucun Meta Recouvrement trouvé"
+      },
+      "created": "Un nouveau Meta Recouvrement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Meta Recouvrement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Meta Recouvrement avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Meta Recouvrement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Meta Recouvrement"
+      },
+      "idTech": "Id Tech",
+      "societe": "Societe",
+      "numSous": "Num Sous",
+      "idTech": "Id Tech"
+    }
+  }
+}

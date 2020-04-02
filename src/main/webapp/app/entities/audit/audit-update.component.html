@@ -12,6 +12,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.audit.idAudit" for="field_idAudit">Id Audit</label>
+                    <input type="number" class="form-control" name="idAudit" id="field_idAudit"
+                           formControlName="idAudit"/>
+                </div>
+
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="pnApplicationApp.audit.idEdition" for="field_idEdition">Id Edition</label>
                     <input type="number" class="form-control" name="idEdition" id="field_idEdition"
                            formControlName="idEdition"/>
@@ -33,8 +39,8 @@
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="pnApplicationApp.audit.action" for="field_action">Action</label>
                     <select class="form-control" name="action" formControlName="action" id="field_action">
-                        <option value="FINALISER">{{ 'pnApplicationApp.Action.FINALISER' | translate }}</option>
-                        <option value="EDITER">{{ 'pnApplicationApp.Action.EDITER' | translate }}</option>
+                        <option value="VISUALISATION">{{ 'pnApplicationApp.Action.VISUALISATION' | translate }}</option>
+                        <option value="EDITION">{{ 'pnApplicationApp.Action.EDITION' | translate }}</option>
                         <option value="BROUILLON">{{ 'pnApplicationApp.Action.BROUILLON' | translate }}</option>
                         <option value="SUPPRESSION">{{ 'pnApplicationApp.Action.SUPPRESSION' | translate }}</option>
                     </select>

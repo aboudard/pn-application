@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="metaSIRH">
+            <h2><span jhiTranslate="pnApplicationApp.metaSIRH.detail.title">Meta SIRH</span> {{ metaSIRH.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.numBadge">Num Badge</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.numBadge }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.numBadgeDest">Num Badge Dest</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.numBadgeDest }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.nomCollab">Nom Collab</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.nomCollab }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.prenomCollab">Prenom Collab</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.prenomCollab }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.codeUO">Code UO</span></dt>
+                <dd>
+                    <span>{{ metaSIRH.codeUO }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSIRH.idTech">Id Tech</span></dt>
+                <dd>
+                    <div *ngIf="metaSIRH.idTech">
+                        <a [routerLink]="['/demande', metaSIRH.idTech?.id, 'view']">{{ metaSIRH.idTech?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meta-sirh', metaSIRH.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

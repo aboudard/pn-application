@@ -16,6 +16,7 @@
       "detail": {
         "title": "Audit"
       },
+      "idAudit": "Id Audit",
       "idEdition": "Id Edition",
       "date": "Date",
       "badge": "Badge",

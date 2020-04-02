@@ -25,7 +25,7 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Audit(0, 0, currentDate, 'AAAAAAA', Action.FINALISER);
+      elemDefault = new Audit(0, 0, 0, currentDate, 'AAAAAAA', Action.VISUALISATION);
     });
 
     describe('Service methods', () => {
@@ -70,6 +70,7 @@ describe('Service Tests', () => {
       it('should update a Audit', () => {
         const returnedFromService = Object.assign(
           {
+            idAudit: 1,
             idEdition: 1,
             date: currentDate.format(DATE_TIME_FORMAT),
             badge: 'BBBBBB',
@@ -95,6 +96,7 @@ describe('Service Tests', () => {
       it('should return a list of Audit', () => {
         const returnedFromService = Object.assign(
           {
+            idAudit: 1,
             idEdition: 1,
             date: currentDate.format(DATE_TIME_FORMAT),
             badge: 'BBBBBB',

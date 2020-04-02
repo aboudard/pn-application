@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="metaVie">
+            <h2><span jhiTranslate="pnApplicationApp.metaVie.detail.title">Meta Vie</span> {{ metaVie.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.metaVie.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ metaVie.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaVie.numSous">Num Sous</span></dt>
+                <dd>
+                    <span>{{ metaVie.numSous }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaVie.numContratVie">Num Contrat Vie</span></dt>
+                <dd>
+                    <span>{{ metaVie.numContratVie }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaVie.idTech">Id Tech</span></dt>
+                <dd>
+                    <div *ngIf="metaVie.idTech">
+                        <a [routerLink]="['/demande', metaVie.idTech?.id, 'view']">{{ metaVie.idTech?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meta-vie', metaVie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paramDemande">
+            <h2><span jhiTranslate="pnApplicationApp.paramDemande.detail.title">Param Demande</span> {{ paramDemande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.idDemande">Id Demande</span></dt>
+                <dd>
+                    <span>{{ paramDemande.idDemande }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.fgcle">Fgcle</span></dt>
+                <dd>
+                    <span>{{ paramDemande.fgcle }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.nomDataLoader">Nom Data Loader</span></dt>
+                <dd>
+                    <span>{{ paramDemande.nomDataLoader }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.versionDataLoader">Version Data Loader</span></dt>
+                <dd>
+                    <span>{{ paramDemande.versionDataLoader }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.nomModele">Nom Modele</span></dt>
+                <dd>
+                    <span>{{ paramDemande.nomModele }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.idModele">Id Modele</span></dt>
+                <dd>
+                    <span>{{ paramDemande.idModele }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.versionModele">Version Modele</span></dt>
+                <dd>
+                    <span>{{ paramDemande.versionModele }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.impression">Impression</span></dt>
+                <dd>
+                    <span>{{ paramDemande.impression }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.archivage">Archivage</span></dt>
+                <dd>
+                    <span>{{ paramDemande.archivage }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.interactive">Interactive</span></dt>
+                <dd>
+                    <span>{{ paramDemande.interactive }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.stockage">Stockage</span></dt>
+                <dd>
+                    <span>{{ paramDemande.stockage }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.hostCol">Host Col</span></dt>
+                <dd>
+                    <span>{{ paramDemande.hostCol }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.impCentr">Imp Centr</span></dt>
+                <dd>
+                    <span>{{ paramDemande.impCentr }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.instCol">Inst Col</span></dt>
+                <dd>
+                    <span>{{ paramDemande.instCol }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.impHCentr">Imp H Centr</span></dt>
+                <dd>
+                    <span>{{ paramDemande.impHCentr }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.lotCont">Lot Cont</span></dt>
+                <dd>
+                    <span>{{ paramDemande.lotCont }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.dest">Dest</span></dt>
+                <dd>
+                    <span>{{ paramDemande.dest }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.triRegrouptBann">Tri Regroupt Bann</span></dt>
+                <dd>
+                    <span>{{ paramDemande.triRegrouptBann }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.regles">Regles</span></dt>
+                <dd>
+                    <span>{{ paramDemande.regles }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.conditionnement">Conditionnement</span></dt>
+                <dd>
+                    <span>{{ paramDemande.conditionnement }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.periodicite">Periodicite</span></dt>
+                <dd>
+                    <span>{{ paramDemande.periodicite }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.flagMail">Flag Mail</span></dt>
+                <dd>
+                    <span>{{ paramDemande.flagMail }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.description">Description</span></dt>
+                <dd>
+                    <span>{{ paramDemande.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.versionMo">Version Mo</span></dt>
+                <dd>
+                    <span>{{ paramDemande.versionMo }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.queuesEaiIn">Queues Eai In</span></dt>
+                <dd>
+                    <span>{{ paramDemande.queuesEaiIn }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.queuesEaiOut">Queues Eai Out</span></dt>
+                <dd>
+                    <span>{{ paramDemande.queuesEaiOut }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.libre2">Libre 2</span></dt>
+                <dd>
+                    <span>{{ paramDemande.libre2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.paramDemande.libre4">Libre 4</span></dt>
+                <dd>
+                    <span>{{ paramDemande.libre4 }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/param-demande', paramDemande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

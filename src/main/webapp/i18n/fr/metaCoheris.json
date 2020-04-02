@@ -1,0 +1,26 @@
+{
+  "pnApplicationApp": {
+    "metaCoheris": {
+      "home": {
+        "title": "MetaCoherises",
+        "createLabel": "Créer un nouveau Meta Coheris",
+        "createOrEditLabel": "Créer ou éditer un Meta Coheris",
+        "notFound": "Aucun Meta Coheris trouvé"
+      },
+      "created": "Un nouveau Meta Coheris a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Meta Coheris avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Meta Coheris avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Meta Coheris {{ id }} ?"
+      },
+      "detail": {
+        "title": "Meta Coheris"
+      },
+      "idTech": "Id Tech",
+      "societe": "Societe",
+      "numSous": "Num Sous",
+      "numGRC": "Num GRC",
+      "idTech": "Id Tech"
+    }
+  }
+}

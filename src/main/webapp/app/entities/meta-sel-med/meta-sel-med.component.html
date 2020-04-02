@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pnApplicationApp.metaSelMed.home.title">Meta Sel Meds</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-meta-sel-med" [routerLink]="['/meta-sel-med/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pnApplicationApp.metaSelMed.home.createLabel">
+            Create a new Meta Sel Med
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="metaSelMeds?.length === 0">
+        <span jhiTranslate="pnApplicationApp.metaSelMed.home.notFound">No metaSelMeds found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="metaSelMeds?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaSelMed.idTech">Id Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaSelMed.numSous">Num Sous</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaSelMed.numDossier">Num Dossier</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaSelMed.nomAssure">Nom Assure</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaSelMed.idTech">Id Tech</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let metaSelMed of metaSelMeds ;trackBy: trackId">
+                    <td><a [routerLink]="['/meta-sel-med', metaSelMed.id, 'view']">{{ metaSelMed.id }}</a></td>
+                    <td>{{ metaSelMed.idTech }}</td>
+                    <td>{{ metaSelMed.numSous }}</td>
+                    <td>{{ metaSelMed.numDossier }}</td>
+                    <td>{{ metaSelMed.nomAssure }}</td>
+                    <td>
+                        <div *ngIf="metaSelMed.idTech">
+                            <a [routerLink]="['/demande', metaSelMed.idTech?.id, 'view']" >{{ metaSelMed.idTech?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/meta-sel-med', metaSelMed.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/meta-sel-med', metaSelMed.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(metaSelMed)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "pnApplicationApp": {
+    "metaSelMed": {
+      "home": {
+        "title": "Meta Sel Meds",
+        "createLabel": "Create a new Meta Sel Med",
+        "createOrEditLabel": "Create or edit a Meta Sel Med",
+        "notFound": "No Meta Sel Meds found"
+      },
+      "created": "A new Meta Sel Med is created with identifier {{ param }}",
+      "updated": "A Meta Sel Med is updated with identifier {{ param }}",
+      "deleted": "A Meta Sel Med is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meta Sel Med {{ id }}?"
+      },
+      "detail": {
+        "title": "Meta Sel Med"
+      },
+      "idTech": "Id Tech",
+      "numSous": "Num Sous",
+      "numDossier": "Num Dossier",
+      "nomAssure": "Nom Assure",
+      "idTech": "Id Tech"
+    }
+  }
+}
