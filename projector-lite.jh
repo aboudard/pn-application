@@ -1,0 +1,21 @@
+
+entity Demande {
+	idTech Long required,
+    domaine String,
+    idDemande String,
+    badge String,
+    dateDemande Instant,
+    statut Statut,
+    flux Blob
+}
+
+entity MetaProduction {
+	idTech Long,
+	societe String,
+    numContratLgbt String,
+    numSous String
+}
+
+relationship OneToOne {
+	Demande to MetaProduction{idTech},
+}
