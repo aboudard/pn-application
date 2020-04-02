@@ -25,6 +25,9 @@ public class Audit implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "id_audit")
+    private Long idAudit;
+
     @Column(name = "id_edition")
     private Long idEdition;
 
@@ -45,6 +48,19 @@ public class Audit implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getIdAudit() {
+        return idAudit;
+    }
+
+    public Audit idAudit(Long idAudit) {
+        this.idAudit = idAudit;
+        return this;
+    }
+
+    public void setIdAudit(Long idAudit) {
+        this.idAudit = idAudit;
     }
 
     public Long getIdEdition() {
@@ -120,6 +136,7 @@ public class Audit implements Serializable {
     public String toString() {
         return "Audit{" +
             "id=" + getId() +
+            ", idAudit=" + getIdAudit() +
             ", idEdition=" + getIdEdition() +
             ", date='" + getDate() + "'" +
             ", badge='" + getBadge() + "'" +

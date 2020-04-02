@@ -1,0 +1,50 @@
+{
+    "name": "MetaSIRH",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numBadge",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numBadgeDest",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomCollab",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenomCollab",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codeUO",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "metaSIRH",
+            "relationshipName": "idTech",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200402134000",
+    "entityTableName": "meta_sirh",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

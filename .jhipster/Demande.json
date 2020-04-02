@@ -27,7 +27,7 @@
         {
             "fieldName": "statut",
             "fieldType": "Statut",
-            "fieldValues": "A_FINALISER,BROUILLON,VALIDE"
+            "fieldValues": "A_FINALISER,BROUILLON,TERMINE"
         },
         {
             "fieldName": "flux",

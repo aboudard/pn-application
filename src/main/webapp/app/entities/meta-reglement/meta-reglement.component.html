@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pnApplicationApp.metaReglement.home.title">Meta Reglements</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-meta-reglement" [routerLink]="['/meta-reglement/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pnApplicationApp.metaReglement.home.createLabel">
+            Create a new Meta Reglement
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="metaReglements?.length === 0">
+        <span jhiTranslate="pnApplicationApp.metaReglement.home.notFound">No metaReglements found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="metaReglements?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.idTech">Id Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.societe">Societe</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.numSinistre">Num Sinistre</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.numContratLgbt">Num Contrat Lgbt</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.numSous">Num Sous</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaReglement.idTech">Id Tech</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let metaReglement of metaReglements ;trackBy: trackId">
+                    <td><a [routerLink]="['/meta-reglement', metaReglement.id, 'view']">{{ metaReglement.id }}</a></td>
+                    <td>{{ metaReglement.idTech }}</td>
+                    <td>{{ metaReglement.societe }}</td>
+                    <td>{{ metaReglement.numSinistre }}</td>
+                    <td>{{ metaReglement.numContratLgbt }}</td>
+                    <td>{{ metaReglement.numSous }}</td>
+                    <td>
+                        <div *ngIf="metaReglement.idTech">
+                            <a [routerLink]="['/demande', metaReglement.idTech?.id, 'view']" >{{ metaReglement.idTech?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/meta-reglement', metaReglement.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/meta-reglement', metaReglement.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(metaReglement)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

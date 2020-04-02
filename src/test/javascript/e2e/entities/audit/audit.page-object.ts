@@ -29,6 +29,7 @@ export class AuditUpdatePage {
   saveButton = element(by.id('save-entity'));
   cancelButton = element(by.id('cancel-save'));
 
+  idAuditInput = element(by.id('field_idAudit'));
   idEditionInput = element(by.id('field_idEdition'));
   dateInput = element(by.id('field_date'));
   badgeInput = element(by.id('field_badge'));
@@ -36,6 +37,14 @@ export class AuditUpdatePage {
 
   async getPageTitle(): Promise<string> {
     return this.pageTitle.getAttribute('jhiTranslate');
+  }
+
+  async setIdAuditInput(idAudit: string): Promise<void> {
+    await this.idAuditInput.sendKeys(idAudit);
+  }
+
+  async getIdAuditInput(): Promise<string> {
+    return await this.idAuditInput.getAttribute('value');
   }
 
   async setIdEditionInput(idEdition: string): Promise<void> {

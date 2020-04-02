@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="pnApplicationApp.metaRecouvrement.home.title">Meta Recouvrements</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-meta-recouvrement" [routerLink]="['/meta-recouvrement/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="pnApplicationApp.metaRecouvrement.home.createLabel">
+            Create a new Meta Recouvrement
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="metaRecouvrements?.length === 0">
+        <span jhiTranslate="pnApplicationApp.metaRecouvrement.home.notFound">No metaRecouvrements found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="metaRecouvrements?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaRecouvrement.idTech">Id Tech</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaRecouvrement.societe">Societe</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaRecouvrement.numSous">Num Sous</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.metaRecouvrement.idTech">Id Tech</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let metaRecouvrement of metaRecouvrements ;trackBy: trackId">
+                    <td><a [routerLink]="['/meta-recouvrement', metaRecouvrement.id, 'view']">{{ metaRecouvrement.id }}</a></td>
+                    <td>{{ metaRecouvrement.idTech }}</td>
+                    <td>{{ metaRecouvrement.societe }}</td>
+                    <td>{{ metaRecouvrement.numSous }}</td>
+                    <td>
+                        <div *ngIf="metaRecouvrement.idTech">
+                            <a [routerLink]="['/demande', metaRecouvrement.idTech?.id, 'view']" >{{ metaRecouvrement.idTech?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/meta-recouvrement', metaRecouvrement.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/meta-recouvrement', metaRecouvrement.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(metaRecouvrement)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

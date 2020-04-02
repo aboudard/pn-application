@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="metaSelMed">
+            <h2><span jhiTranslate="pnApplicationApp.metaSelMed.detail.title">Meta Sel Med</span> {{ metaSelMed.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.metaSelMed.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ metaSelMed.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSelMed.numSous">Num Sous</span></dt>
+                <dd>
+                    <span>{{ metaSelMed.numSous }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSelMed.numDossier">Num Dossier</span></dt>
+                <dd>
+                    <span>{{ metaSelMed.numDossier }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSelMed.nomAssure">Nom Assure</span></dt>
+                <dd>
+                    <span>{{ metaSelMed.nomAssure }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaSelMed.idTech">Id Tech</span></dt>
+                <dd>
+                    <div *ngIf="metaSelMed.idTech">
+                        <a [routerLink]="['/demande', metaSelMed.idTech?.id, 'view']">{{ metaSelMed.idTech?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meta-sel-med', metaSelMed.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

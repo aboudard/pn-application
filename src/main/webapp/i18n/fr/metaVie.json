@@ -1,0 +1,25 @@
+{
+  "pnApplicationApp": {
+    "metaVie": {
+      "home": {
+        "title": "MetaVies",
+        "createLabel": "Créer un nouveau Meta Vie",
+        "createOrEditLabel": "Créer ou éditer un Meta Vie",
+        "notFound": "Aucun Meta Vie trouvé"
+      },
+      "created": "Un nouveau Meta Vie a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Meta Vie avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Meta Vie avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Meta Vie {{ id }} ?"
+      },
+      "detail": {
+        "title": "Meta Vie"
+      },
+      "idTech": "Id Tech",
+      "numSous": "Num Sous",
+      "numContratVie": "Num Contrat Vie",
+      "idTech": "Id Tech"
+    }
+  }
+}

@@ -1,0 +1,194 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-param-demande-heading" jhiTranslate="pnApplicationApp.paramDemande.home.createOrEditLabel">Create or edit a Param Demande</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.idDemande" for="field_idDemande">Id Demande</label>
+                    <input type="text" class="form-control" name="idDemande" id="field_idDemande"
+                           formControlName="idDemande"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.fgcle" for="field_fgcle">Fgcle</label>
+                    <input type="number" class="form-control" name="fgcle" id="field_fgcle"
+                           formControlName="fgcle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.nomDataLoader" for="field_nomDataLoader">Nom Data Loader</label>
+                    <input type="number" class="form-control" name="nomDataLoader" id="field_nomDataLoader"
+                           formControlName="nomDataLoader"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.versionDataLoader" for="field_versionDataLoader">Version Data Loader</label>
+                    <input type="text" class="form-control" name="versionDataLoader" id="field_versionDataLoader"
+                           formControlName="versionDataLoader"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.nomModele" for="field_nomModele">Nom Modele</label>
+                    <input type="number" class="form-control" name="nomModele" id="field_nomModele"
+                           formControlName="nomModele"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.idModele" for="field_idModele">Id Modele</label>
+                    <input type="number" class="form-control" name="idModele" id="field_idModele"
+                           formControlName="idModele"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.versionModele" for="field_versionModele">Version Modele</label>
+                    <input type="text" class="form-control" name="versionModele" id="field_versionModele"
+                           formControlName="versionModele"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.impression" for="field_impression">Impression</label>
+                    <input type="text" class="form-control" name="impression" id="field_impression"
+                           formControlName="impression"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.archivage" for="field_archivage">Archivage</label>
+                    <input type="text" class="form-control" name="archivage" id="field_archivage"
+                           formControlName="archivage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.interactive" for="field_interactive">Interactive</label>
+                    <input type="text" class="form-control" name="interactive" id="field_interactive"
+                           formControlName="interactive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.stockage" for="field_stockage">Stockage</label>
+                    <input type="text" class="form-control" name="stockage" id="field_stockage"
+                           formControlName="stockage"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.hostCol" for="field_hostCol">Host Col</label>
+                    <input type="text" class="form-control" name="hostCol" id="field_hostCol"
+                           formControlName="hostCol"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.impCentr" for="field_impCentr">Imp Centr</label>
+                    <input type="text" class="form-control" name="impCentr" id="field_impCentr"
+                           formControlName="impCentr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.instCol" for="field_instCol">Inst Col</label>
+                    <input type="text" class="form-control" name="instCol" id="field_instCol"
+                           formControlName="instCol"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.impHCentr" for="field_impHCentr">Imp H Centr</label>
+                    <input type="text" class="form-control" name="impHCentr" id="field_impHCentr"
+                           formControlName="impHCentr"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.lotCont" for="field_lotCont">Lot Cont</label>
+                    <input type="text" class="form-control" name="lotCont" id="field_lotCont"
+                           formControlName="lotCont"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.dest" for="field_dest">Dest</label>
+                    <input type="text" class="form-control" name="dest" id="field_dest"
+                           formControlName="dest"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.triRegrouptBann" for="field_triRegrouptBann">Tri Regroupt Bann</label>
+                    <input type="text" class="form-control" name="triRegrouptBann" id="field_triRegrouptBann"
+                           formControlName="triRegrouptBann"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.regles" for="field_regles">Regles</label>
+                    <input type="number" class="form-control" name="regles" id="field_regles"
+                           formControlName="regles"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.conditionnement" for="field_conditionnement">Conditionnement</label>
+                    <input type="text" class="form-control" name="conditionnement" id="field_conditionnement"
+                           formControlName="conditionnement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.periodicite" for="field_periodicite">Periodicite</label>
+                    <input type="text" class="form-control" name="periodicite" id="field_periodicite"
+                           formControlName="periodicite"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.flagMail" for="field_flagMail">Flag Mail</label>
+                    <input type="text" class="form-control" name="flagMail" id="field_flagMail"
+                           formControlName="flagMail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                           formControlName="description"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.versionMo" for="field_versionMo">Version Mo</label>
+                    <input type="number" class="form-control" name="versionMo" id="field_versionMo"
+                           formControlName="versionMo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.queuesEaiIn" for="field_queuesEaiIn">Queues Eai In</label>
+                    <input type="text" class="form-control" name="queuesEaiIn" id="field_queuesEaiIn"
+                           formControlName="queuesEaiIn"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.queuesEaiOut" for="field_queuesEaiOut">Queues Eai Out</label>
+                    <input type="text" class="form-control" name="queuesEaiOut" id="field_queuesEaiOut"
+                           formControlName="queuesEaiOut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.libre2" for="field_libre2">Libre 2</label>
+                    <input type="number" class="form-control" name="libre2" id="field_libre2"
+                           formControlName="libre2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="pnApplicationApp.paramDemande.libre4" for="field_libre4">Libre 4</label>
+                    <input type="number" class="form-control" name="libre4" id="field_libre4"
+                           formControlName="libre4"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

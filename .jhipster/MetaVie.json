@@ -1,0 +1,38 @@
+{
+    "name": "MetaVie",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numSous",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numContratVie",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "metaVie",
+            "relationshipName": "idTech",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200402133800",
+    "entityTableName": "meta_vie",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

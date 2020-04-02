@@ -2,8 +2,8 @@
   "pnApplicationApp": {
     "Action": {
       "null": "",
-      "FINALISER": "FINALISER",
-      "EDITER": "EDITER",
+      "VISUALISATION": "VISUALISATION",
+      "EDITION": "EDITION",
       "BROUILLON": "BROUILLON",
       "SUPPRESSION": "SUPPRESSION"
     }

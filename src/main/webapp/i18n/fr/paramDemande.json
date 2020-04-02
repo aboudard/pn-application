@@ -1,0 +1,49 @@
+{
+  "pnApplicationApp": {
+    "paramDemande": {
+      "home": {
+        "title": "ParamDemandes",
+        "createLabel": "Créer un nouveau Param Demande",
+        "createOrEditLabel": "Créer ou éditer un Param Demande",
+        "notFound": "Aucun Param Demande trouvé"
+      },
+      "created": "Un nouveau Param Demande a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Param Demande avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Param Demande avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Param Demande {{ id }} ?"
+      },
+      "detail": {
+        "title": "Param Demande"
+      },
+      "idDemande": "Id Demande",
+      "fgcle": "Fgcle",
+      "nomDataLoader": "Nom Data Loader",
+      "versionDataLoader": "Version Data Loader",
+      "nomModele": "Nom Modele",
+      "idModele": "Id Modele",
+      "versionModele": "Version Modele",
+      "impression": "Impression",
+      "archivage": "Archivage",
+      "interactive": "Interactive",
+      "stockage": "Stockage",
+      "hostCol": "Host Col",
+      "impCentr": "Imp Centr",
+      "instCol": "Inst Col",
+      "impHCentr": "Imp H Centr",
+      "lotCont": "Lot Cont",
+      "dest": "Dest",
+      "triRegrouptBann": "Tri Regroupt Bann",
+      "regles": "Regles",
+      "conditionnement": "Conditionnement",
+      "periodicite": "Periodicite",
+      "flagMail": "Flag Mail",
+      "description": "Description",
+      "versionMo": "Version Mo",
+      "queuesEaiIn": "Queues Eai In",
+      "queuesEaiOut": "Queues Eai Out",
+      "libre2": "Libre 2",
+      "libre4": "Libre 4"
+    }
+  }
+}

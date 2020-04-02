@@ -1,0 +1,28 @@
+{
+  "pnApplicationApp": {
+    "metaSIRH": {
+      "home": {
+        "title": "Meta SIRHS",
+        "createLabel": "Create a new Meta SIRH",
+        "createOrEditLabel": "Create or edit a Meta SIRH",
+        "notFound": "No Meta SIRHS found"
+      },
+      "created": "A new Meta SIRH is created with identifier {{ param }}",
+      "updated": "A Meta SIRH is updated with identifier {{ param }}",
+      "deleted": "A Meta SIRH is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meta SIRH {{ id }}?"
+      },
+      "detail": {
+        "title": "Meta SIRH"
+      },
+      "idTech": "Id Tech",
+      "numBadge": "Num Badge",
+      "numBadgeDest": "Num Badge Dest",
+      "nomCollab": "Nom Collab",
+      "prenomCollab": "Prenom Collab",
+      "codeUO": "Code UO",
+      "idTech": "Id Tech"
+    }
+  }
+}

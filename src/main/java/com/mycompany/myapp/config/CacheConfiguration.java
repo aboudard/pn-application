@@ -46,6 +46,13 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.DocFlux.class.getName());
             createCache(cm, com.mycompany.myapp.domain.DocFlux.class.getName() + ".idEditions");
             createCache(cm, com.mycompany.myapp.domain.Audit.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaRecouvrement.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaVie.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaSelMed.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaSIRH.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaCoheris.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.MetaReglement.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.ParamDemande.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

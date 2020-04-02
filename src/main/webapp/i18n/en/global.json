@@ -11,6 +11,13 @@
         "metaProduction": "Meta Production",
         "docFlux": "Doc Flux",
         "audit": "Audit",
+        "metaRecouvrement": "Meta Recouvrement",
+        "metaVie": "Meta Vie",
+        "metaSelMed": "Meta Sel Med",
+        "metaSirh": "Meta SIRH",
+        "metaCoheris": "Meta Coheris",
+        "metaReglement": "Meta Reglement",
+        "paramDemande": "Param Demande",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,42 @@
+{
+    "name": "MetaSelMed",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numSous",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numDossier",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomAssure",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "metaSelMed",
+            "relationshipName": "idTech",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200402133900",
+    "entityTableName": "meta_sel_med",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,28 @@
+{
+  "pnApplicationApp": {
+    "metaSIRH": {
+      "home": {
+        "title": "MetaSIRHS",
+        "createLabel": "Créer un nouveau Meta SIRH",
+        "createOrEditLabel": "Créer ou éditer un Meta SIRH",
+        "notFound": "Aucun Meta SIRH trouvé"
+      },
+      "created": "Un nouveau Meta SIRH a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Meta SIRH avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Meta SIRH avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Meta SIRH {{ id }} ?"
+      },
+      "detail": {
+        "title": "Meta SIRH"
+      },
+      "idTech": "Id Tech",
+      "numBadge": "Num Badge",
+      "numBadgeDest": "Num Badge Dest",
+      "nomCollab": "Nom Collab",
+      "prenomCollab": "Prenom Collab",
+      "codeUO": "Code UO",
+      "idTech": "Id Tech"
+    }
+  }
+}

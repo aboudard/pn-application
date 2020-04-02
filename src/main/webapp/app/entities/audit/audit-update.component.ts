@@ -19,6 +19,7 @@ export class AuditUpdateComponent implements OnInit {
 
   editForm = this.fb.group({
     id: [],
+    idAudit: [],
     idEdition: [],
     date: [],
     badge: [],
@@ -41,6 +42,7 @@ export class AuditUpdateComponent implements OnInit {
   updateForm(audit: IAudit): void {
     this.editForm.patchValue({
       id: audit.id,
+      idAudit: audit.idAudit,
       idEdition: audit.idEdition,
       date: audit.date ? audit.date.format(DATE_TIME_FORMAT) : null,
       badge: audit.badge,
@@ -66,6 +68,7 @@ export class AuditUpdateComponent implements OnInit {
     return {
       ...new Audit(),
       id: this.editForm.get(['id'])!.value,
+      idAudit: this.editForm.get(['idAudit'])!.value,
       idEdition: this.editForm.get(['idEdition'])!.value,
       date: this.editForm.get(['date'])!.value ? moment(this.editForm.get(['date'])!.value, DATE_TIME_FORMAT) : undefined,
       badge: this.editForm.get(['badge'])!.value,

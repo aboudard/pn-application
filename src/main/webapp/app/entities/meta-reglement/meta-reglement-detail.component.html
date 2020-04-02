@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="metaReglement">
+            <h2><span jhiTranslate="pnApplicationApp.metaReglement.detail.title">Meta Reglement</span> {{ metaReglement.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.idTech">Id Tech</span></dt>
+                <dd>
+                    <span>{{ metaReglement.idTech }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.societe">Societe</span></dt>
+                <dd>
+                    <span>{{ metaReglement.societe }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.numSinistre">Num Sinistre</span></dt>
+                <dd>
+                    <span>{{ metaReglement.numSinistre }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.numContratLgbt">Num Contrat Lgbt</span></dt>
+                <dd>
+                    <span>{{ metaReglement.numContratLgbt }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.numSous">Num Sous</span></dt>
+                <dd>
+                    <span>{{ metaReglement.numSous }}</span>
+                </dd>
+                <dt><span jhiTranslate="pnApplicationApp.metaReglement.idTech">Id Tech</span></dt>
+                <dd>
+                    <div *ngIf="metaReglement.idTech">
+                        <a [routerLink]="['/demande', metaReglement.idTech?.id, 'view']">{{ metaReglement.idTech?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/meta-reglement', metaReglement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

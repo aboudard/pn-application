@@ -33,6 +33,9 @@ import com.mycompany.myapp.domain.enumeration.Action;
 @WithMockUser
 public class AuditResourceIT {
 
+    private static final Long DEFAULT_ID_AUDIT = 1L;
+    private static final Long UPDATED_ID_AUDIT = 2L;
+
     private static final Long DEFAULT_ID_EDITION = 1L;
     private static final Long UPDATED_ID_EDITION = 2L;
 
@@ -42,8 +45,8 @@ public class AuditResourceIT {
     private static final String DEFAULT_BADGE = "AAAAAAAAAA";
     private static final String UPDATED_BADGE = "BBBBBBBBBB";
 
-    private static final Action DEFAULT_ACTION = Action.FINALISER;
-    private static final Action UPDATED_ACTION = Action.EDITER;
+    private static final Action DEFAULT_ACTION = Action.VISUALISATION;
+    private static final Action UPDATED_ACTION = Action.EDITION;
 
     @Autowired
     private AuditRepository auditRepository;
@@ -64,6 +67,7 @@ public class AuditResourceIT {
      */
     public static Audit createEntity(EntityManager em) {
         Audit audit = new Audit()
+            .idAudit(DEFAULT_ID_AUDIT)
             .idEdition(DEFAULT_ID_EDITION)
             .date(DEFAULT_DATE)
             .badge(DEFAULT_BADGE)
@@ -78,6 +82,7 @@ public class AuditResourceIT {
      */
     public static Audit createUpdatedEntity(EntityManager em) {
         Audit audit = new Audit()
+            .idAudit(UPDATED_ID_AUDIT)
             .idEdition(UPDATED_ID_EDITION)
             .date(UPDATED_DATE)
             .badge(UPDATED_BADGE)
@@ -105,6 +110,7 @@ public class AuditResourceIT {
         List<Audit> auditList = auditRepository.findAll();
         assertThat(auditList).hasSize(databaseSizeBeforeCreate + 1);
         Audit testAudit = auditList.get(auditList.size() - 1);
+        assertThat(testAudit.getIdAudit()).isEqualTo(DEFAULT_ID_AUDIT);
         assertThat(testAudit.getIdEdition()).isEqualTo(DEFAULT_ID_EDITION);
         assertThat(testAudit.getDate()).isEqualTo(DEFAULT_DATE);
         assertThat(testAudit.getBadge()).isEqualTo(DEFAULT_BADGE);
@@ -142,6 +148,7 @@ public class AuditResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(audit.getId().intValue())))
+            .andExpect(jsonPath("$.[*].idAudit").value(hasItem(DEFAULT_ID_AUDIT.intValue())))
             .andExpect(jsonPath("$.[*].idEdition").value(hasItem(DEFAULT_ID_EDITION.intValue())))
             .andExpect(jsonPath("$.[*].date").value(hasItem(DEFAULT_DATE.toString())))
             .andExpect(jsonPath("$.[*].badge").value(hasItem(DEFAULT_BADGE)))
@@ -159,6 +166,7 @@ public class AuditResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(audit.getId().intValue()))
+            .andExpect(jsonPath("$.idAudit").value(DEFAULT_ID_AUDIT.intValue()))
             .andExpect(jsonPath("$.idEdition").value(DEFAULT_ID_EDITION.intValue()))
             .andExpect(jsonPath("$.date").value(DEFAULT_DATE.toString()))
             .andExpect(jsonPath("$.badge").value(DEFAULT_BADGE))
@@ -186,6 +194,7 @@ public class AuditResourceIT {
         // Disconnect from session so that the updates on updatedAudit are not directly saved in db
         em.detach(updatedAudit);
         updatedAudit
+            .idAudit(UPDATED_ID_AUDIT)
             .idEdition(UPDATED_ID_EDITION)
             .date(UPDATED_DATE)
             .badge(UPDATED_BADGE)
@@ -200,6 +209,7 @@ public class AuditResourceIT {
         List<Audit> auditList = auditRepository.findAll();
         assertThat(auditList).hasSize(databaseSizeBeforeUpdate);
         Audit testAudit = auditList.get(auditList.size() - 1);
+        assertThat(testAudit.getIdAudit()).isEqualTo(UPDATED_ID_AUDIT);
         assertThat(testAudit.getIdEdition()).isEqualTo(UPDATED_ID_EDITION);
         assertThat(testAudit.getDate()).isEqualTo(UPDATED_DATE);
         assertThat(testAudit.getBadge()).isEqualTo(UPDATED_BADGE);

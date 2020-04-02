@@ -2,6 +2,10 @@
     "name": "Audit",
     "fields": [
         {
+            "fieldName": "idAudit",
+            "fieldType": "Long"
+        },
+        {
             "fieldName": "idEdition",
             "fieldType": "Long"
         },
@@ -16,7 +20,7 @@
         {
             "fieldName": "action",
             "fieldType": "Action",
-            "fieldValues": "FINALISER,EDITER,BROUILLON,SUPPRESSION"
+            "fieldValues": "VISUALISATION,EDITION,BROUILLON,SUPPRESSION"
         }
     ],
     "relationships": [],

@@ -1,0 +1,42 @@
+{
+    "name": "MetaCoheris",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "societe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numSous",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numGRC",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "metaCoheris",
+            "relationshipName": "idTech",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200402134100",
+    "entityTableName": "meta_coheris",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

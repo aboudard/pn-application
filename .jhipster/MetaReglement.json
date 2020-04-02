@@ -1,0 +1,46 @@
+{
+    "name": "MetaReglement",
+    "fields": [
+        {
+            "fieldName": "idTech",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "societe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numSinistre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numContratLgbt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numSous",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "demande",
+            "otherEntityRelationshipName": "metaReglement",
+            "relationshipName": "idTech",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20200402134200",
+    "entityTableName": "meta_reglement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

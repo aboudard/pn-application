@@ -23,6 +23,7 @@
             <thead>
                 <tr>
                     <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="pnApplicationApp.audit.idAudit">Id Audit</span></th>
                     <th scope="col" ><span jhiTranslate="pnApplicationApp.audit.idEdition">Id Edition</span></th>
                     <th scope="col" ><span jhiTranslate="pnApplicationApp.audit.date">Date</span></th>
                     <th scope="col" ><span jhiTranslate="pnApplicationApp.audit.badge">Badge</span></th>
@@ -33,6 +34,7 @@
             <tbody>
                 <tr *ngFor="let audit of audits ;trackBy: trackId">
                     <td><a [routerLink]="['/audit', audit.id, 'view']">{{ audit.id }}</a></td>
+                    <td>{{ audit.idAudit }}</td>
                     <td>{{ audit.idEdition }}</td>
                     <td>{{ audit.date | date:'medium' }}</td>
                     <td>{{ audit.badge }}</td>

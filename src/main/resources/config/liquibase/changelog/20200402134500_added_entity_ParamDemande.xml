@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+        <property name="autoIncrement" value="true"/>
+
+    <!--
+        Added the entity ParamDemande.
+    -->
+    <changeSet id="20200402134500-1" author="jhipster">
+        <createTable tableName="param_demande">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="id_demande" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="fgcle" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="nom_data_loader" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="version_data_loader" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nom_modele" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="id_modele" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="version_modele" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="impression" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="archivage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="interactive" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stockage" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="host_col" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="imp_centr" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="inst_col" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="imp_h_centr" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="lot_cont" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dest" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tri_regroupt_bann" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="regles" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="conditionnement" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="periodicite" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="flag_mail" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="version_mo" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="queues_eai_in" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="queues_eai_out" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="libre_2" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="libre_4" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200402134500-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200402134500-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/param_demande.csv"
+                  separator=";"
+                  tableName="param_demande">
+            <column name="id" type="numeric"/>
+            <column name="id_demande" type="string"/>
+            <column name="fgcle" type="numeric"/>
+            <column name="nom_data_loader" type="numeric"/>
+            <column name="version_data_loader" type="string"/>
+            <column name="nom_modele" type="numeric"/>
+            <column name="id_modele" type="numeric"/>
+            <column name="version_modele" type="string"/>
+            <column name="impression" type="string"/>
+            <column name="archivage" type="string"/>
+            <column name="interactive" type="string"/>
+            <column name="stockage" type="string"/>
+            <column name="host_col" type="string"/>
+            <column name="imp_centr" type="string"/>
+            <column name="inst_col" type="string"/>
+            <column name="imp_h_centr" type="string"/>
+            <column name="lot_cont" type="string"/>
+            <column name="dest" type="string"/>
+            <column name="tri_regroupt_bann" type="string"/>
+            <column name="regles" type="numeric"/>
+            <column name="conditionnement" type="string"/>
+            <column name="periodicite" type="string"/>
+            <column name="flag_mail" type="string"/>
+            <column name="description" type="string"/>
+            <column name="version_mo" type="numeric"/>
+            <column name="queues_eai_in" type="string"/>
+            <column name="queues_eai_out" type="string"/>
+            <column name="libre_2" type="numeric"/>
+            <column name="libre_4" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,129 @@
+{
+    "name": "ParamDemande",
+    "fields": [
+        {
+            "fieldName": "idDemande",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fgcle",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nomDataLoader",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "versionDataLoader",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomModele",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "idModele",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "versionModele",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "impression",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "archivage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "interactive",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stockage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hostCol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "impCentr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instCol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "impHCentr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotCont",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dest",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "triRegrouptBann",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regles",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "conditionnement",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "periodicite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flagMail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "versionMo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "queuesEaiIn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "queuesEaiOut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "libre2",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "libre4",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200402134500",
+    "entityTableName": "param_demande",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

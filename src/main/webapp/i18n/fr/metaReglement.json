@@ -1,0 +1,27 @@
+{
+  "pnApplicationApp": {
+    "metaReglement": {
+      "home": {
+        "title": "MetaReglements",
+        "createLabel": "Créer un nouveau Meta Reglement",
+        "createOrEditLabel": "Créer ou éditer un Meta Reglement",
+        "notFound": "Aucun Meta Reglement trouvé"
+      },
+      "created": "Un nouveau Meta Reglement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Meta Reglement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Meta Reglement avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Meta Reglement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Meta Reglement"
+      },
+      "idTech": "Id Tech",
+      "societe": "Societe",
+      "numSinistre": "Num Sinistre",
+      "numContratLgbt": "Num Contrat Lgbt",
+      "numSous": "Num Sous",
+      "idTech": "Id Tech"
+    }
+  }
+}

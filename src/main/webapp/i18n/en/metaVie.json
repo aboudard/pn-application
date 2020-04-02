@@ -1,0 +1,25 @@
+{
+  "pnApplicationApp": {
+    "metaVie": {
+      "home": {
+        "title": "Meta Vies",
+        "createLabel": "Create a new Meta Vie",
+        "createOrEditLabel": "Create or edit a Meta Vie",
+        "notFound": "No Meta Vies found"
+      },
+      "created": "A new Meta Vie is created with identifier {{ param }}",
+      "updated": "A Meta Vie is updated with identifier {{ param }}",
+      "deleted": "A Meta Vie is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meta Vie {{ id }}?"
+      },
+      "detail": {
+        "title": "Meta Vie"
+      },
+      "idTech": "Id Tech",
+      "numSous": "Num Sous",
+      "numContratVie": "Num Contrat Vie",
+      "idTech": "Id Tech"
+    }
+  }
+}
