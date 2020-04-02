@@ -56,7 +56,7 @@ entity MetaReglement {
     numSous String
 }
 relationship OneToOne {
-	MetaProduction{idTech} to Demande
+	MetaProduction{idTech} to Demande{idTech}
 }
 relationship OneToOne {
     MetaRecouvrement{idTech} to Demande
